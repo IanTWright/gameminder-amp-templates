@@ -1,0 +1,53 @@
+[
+    {
+        "UpdateStageName": "Server Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}server",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Data Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}data",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Config Directory Creation",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}data/Config",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Server Download",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "{{DownloadURL}}",
+        "UpdateSourceTarget": "{{$FullBaseDir}}server",
+        "UpdateSourceArgs": "FoundryVTT.zip",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": true,
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Node.js Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "x86_64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"NodeVersion=\\\"{{NodeVersion}}\\\"; cd foundry-vtt && if [[ -x node/bin/node ]]; then InstalledVersion=$(node/bin/node --version); else InstalledVersion=\\\"\\\"; fi; [[ -z \\\"$NodeVersion\\\" ]] && NodeVersion=\\\"v$(wget -qO- https://endoflife.date/api/v1/products/nodejs/releases/{{NodeRelease}} | jq -r \\\".result.latest.name\\\")\\\"; if [[ ! \\\"$NodeVersion\\\" =~ ^v(18|20|22|24)\\.[0-9]+\\.[0-9]+$ ]]; then echo \\\"Invalid Node.js version format specified\\\" && exit 1; elif [[ \\\"$InstalledVersion\\\" == \\\"$NodeVersion\\\" ]]; then echo \\\"Node.js $NodeVersion already installed. Skipping\\\" && exit 0; else [[ -f node.tar.gz ]] && rm -f node.tar.gz >/dev/null 2>&1; wget -qO node.tar.gz https://nodejs.org/download/release/$NodeVersion/node-$NodeVersion-linux-x64.tar.gz || { echo \\\"Download failed from the Node.js CDN. This is a fault with the CDN, not AMP. Aborting\\\"; exit 1; }; mkdir -p node && rm -rf node/* >/dev/null 2>&1 && tar -xzf node.tar.gz -C node --strip-components=1 >/dev/null 2>&1 && rm -f node.tar.gz >/dev/null 2>&1 && echo \\\"Node.js $NodeVersion downloaded\\\"; fi\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Node.js Download",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSourceArch": "aarch64",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"NodeVersion=\\\"{{NodeVersion}}\\\"; cd foundry-vtt && if [[ -x node/bin/node ]]; then InstalledVersion=$(node/bin/node --version); else InstalledVersion=\\\"\\\"; fi; [[ -z \\\"$NodeVersion\\\" ]] && NodeVersion=\\\"v$(wget -qO- https://endoflife.date/api/v1/products/nodejs/releases/{{NodeRelease}} | jq -r \\\".result.latest.name\\\")\\\"; if [[ ! \\\"$NodeVersion\\\" =~ ^v(18|20|22|24)\\.[0-9]+\\.[0-9]+$ ]]; then echo \\\"Invalid Node.js version format specified\\\" && exit 1; elif [[ \\\"$InstalledVersion\\\" == \\\"$NodeVersion\\\" ]]; then echo \\\"Node.js $NodeVersion already installed. Skipping\\\" && exit 0; else [[ -f node.tar.gz ]] && rm -f node.tar.gz >/dev/null 2>&1; wget -qO node.tar.gz https://nodejs.org/download/release/$NodeVersion/node-$NodeVersion-linux-arm64.tar.gz || { echo \\\"Download failed from the Node.js CDN. This is a fault with the CDN, not AMP. Aborting\\\"; exit 1; }; mkdir -p node && rm -rf node/* >/dev/null 2>&1 && tar -xzf node.tar.gz -C node --strip-components=1 >/dev/null 2>&1 && rm -f node.tar.gz >/dev/null 2>&1 && echo \\\"Node.js $NodeVersion downloaded\\\"; fi\"",
+        "SkipOnFailure": false
+    }
+]

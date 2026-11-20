@@ -1,0 +1,37 @@
+[
+    {
+        "UpdateStageName": "Check Installation",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"cd foundry-vtt/server && if [[ ! -f {{app}} ]]; then echo \\\"You must specify the Node.js version (not Linux version) of the Foundry VTT server for AMP to install under Server Download URL in AMP's settings, and select the Server Version accordingly. Aborting\\\" && exit 1; else exit 0; fi\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "Admin Password Check",
+        "UpdateSourcePlatform": "Linux",
+        "UpdateSource": "Executable",
+        "UpdateSourceData": "/bin/bash",
+        "UpdateSourceArgs": "-c \"if [[ ! -s foundry-vtt/data/Config/admin.txt ]]; then echo \\\"No Foundry admin password is set. Set one in GameMinder before starting this table. Aborting\\\" && exit 1; else exit 0; fi\"",
+        "SkipOnFailure": false
+    },
+    {
+        "UpdateStageName": "GameMinder Module Directory",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "CreateDirectory",
+        "UpdateSourceArgs": "{{$FullBaseDir}}data/Data/modules/gameminder",
+        "SkipOnFailure": true
+    },
+    {
+        "UpdateStageName": "GameMinder Module",
+        "UpdateSourcePlatform": "All",
+        "UpdateSource": "FetchURL",
+        "UpdateSourceData": "https://foundry.gameminder.io/gameminder-{{GameMinderModuleVersion}}.zip",
+        "UpdateSourceTarget": "{{$FullBaseDir}}data/Data/modules/gameminder",
+        "UpdateSourceArgs": "gameminder.zip",
+        "UnzipUpdateSource": true,
+        "OverwriteExistingFiles": true,
+        "DeleteAfterExtract": true,
+        "SkipOnFailure": true
+    }
+]
