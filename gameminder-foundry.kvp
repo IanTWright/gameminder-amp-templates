@@ -1,4 +1,4 @@
-Meta.DisplayName=GameMinder Foundry
+Meta.DisplayName=Foundry VTT
 Meta.Description=Foundry Virtual Tabletop for GameMinder hosted tables
 Meta.OS=Linux
 Meta.AarchSupport=Native
@@ -27,7 +27,7 @@ Meta.BreakingReleaseNotes=
 Meta.AppConfigId=f3391c6c-d701-405e-bcb6-2319ffb8266a
 Meta.ImportableExtensions=[]
 Meta.AppIsMultiIPAware=False
-App.DisplayName=GameMinder Foundry
+App.DisplayName=Foundry VTT
 App.RootDir=./foundry-vtt/
 App.BaseDirectory=./foundry-vtt/
 App.SteamWorkshopDownloadLocation=

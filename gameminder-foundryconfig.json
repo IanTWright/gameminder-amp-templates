@@ -1,7 +1,7 @@
 [
     {
         "DisplayName": "Server Port",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "",
         "Keywords": "",
@@ -15,7 +15,7 @@
     },
     {
         "DisplayName": "Server Download URL",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "Sets the full URL to download the server from. [Login](https://foundryvtt.com/) to obtain a current timed URL, then update the server before the timeout. NOTE: Make sure to select the \"Node.js\" version",
         "Keywords": "download,url",
@@ -31,7 +31,7 @@
     },
     {
         "DisplayName": "Server Version",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "Sets the version of the server that is installed, which determines the appropriate application to run",
         "Keywords": "server,application,app",
@@ -50,7 +50,7 @@
     },
     {
         "DisplayName": "Node.js Release Stream",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "Sets the Node.js release stream from which to install the latest version, unless a specific version is specified under Node.js Version. Use v22 for server version 13, v24 for server version 14. Update the server after changing this setting",
         "Keywords": "node,nodejs,release,stream,NodeRelease",
@@ -67,7 +67,7 @@
     },
     {
         "DisplayName": "Node.js Version",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "Sets the [Node.js version](https://nodejs.org/download/release/) to install. Format: v22.22.2. Empty = latest version for the release stream specified under Node.js Release Stream. Update the server after changing this setting",
         "Keywords": "node,nodejs,version,NodeVersion",
@@ -80,7 +80,7 @@
     },
     {
         "DisplayName": "Node.js Command Line Arguments",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "Server:dns:1",
         "Description": "Sets any Node.js command line arguments to include as startup parameters",
         "Keywords": "node,nodejs,command,line,arguments,args",
@@ -95,7 +95,7 @@
     },
     {
         "DisplayName": "Enable UPnP",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "GameMinder network:lan:2",
         "Description": "UPnP stays off for GameMinder tables. Managed by GameMinder; changes are reverted.",
         "Keywords": "upnp",
@@ -112,7 +112,7 @@
     },
     {
         "DisplayName": "Route Prefix",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "GameMinder network:lan:2",
         "Description": "Path Foundry is served under; GameMinder sets the AMP instance id. Managed by GameMinder; changes are reverted.",
         "Keywords": "routeprefix",
@@ -126,7 +126,7 @@
     },
     {
         "DisplayName": "Public Hostname",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "GameMinder network:lan:2",
         "Description": "Public hostname of the tabletop edge. Managed by GameMinder; changes are reverted.",
         "Keywords": "hostname",
@@ -140,7 +140,7 @@
     },
     {
         "DisplayName": "Behind SSL Proxy",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "GameMinder network:lan:2",
         "Description": "Foundry is served through an HTTPS reverse proxy. Managed by GameMinder; changes are reverted.",
         "Keywords": "proxyssl",
@@ -157,7 +157,7 @@
     },
     {
         "DisplayName": "Proxy Port",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "GameMinder network:lan:2",
         "Description": "Port the reverse proxy listens on. Managed by GameMinder; changes are reverted.",
         "Keywords": "proxyport",
@@ -171,7 +171,7 @@
     },
     {
         "DisplayName": "GameMinder Module Version",
-        "Category": "GameMinder Foundry:stadia_controller",
+        "Category": "Foundry VTT:stadia_controller",
         "Subcategory": "GameMinder module:extension:3",
         "Description": "Version of the GameMinder Foundry module installed at every start from foundry.gameminder.io. Empty skips the install.",
         "Keywords": "gameminder,module,version",
