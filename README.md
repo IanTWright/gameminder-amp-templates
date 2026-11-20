@@ -18,4 +18,4 @@ You bring your own Foundry license.
 
 ## Using it in AMP
 
-In the AMP panel, open Configuration, then Instance Deployment, add `IanTWright/gameminder-amp-templates` to the configuration repositories, and fetch the latest templates. "GameMinder Foundry" then appears in the application list when creating an instance.
+In the AMP panel, open Configuration, then Instance Deployment, add `IanTWright/gameminder-amp-templates:main` as a configuration repository, click Fetch, then refresh the browser. "GameMinder Foundry" then appears in the application list when creating an instance, under the GameMinder prefix.
